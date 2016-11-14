@@ -1,0 +1,118 @@
+F1 = P
+The proposition is not a tautology
+
+
+F2 = (- P)
+The proposition is not a tautology
+
+
+F3 = (- - P)
+The proposition is not a tautology
+
+
+F4 = (- - - P)
+The proposition is not a tautology
+
+
+F5 = (P -> Q)
+The proposition is not a tautology
+
+
+F6 = (P V (- P))
+The proposition is a tautology
+
+
+F7 = ((P V Q) -> P)
+The proposition is not a tautology
+
+
+F8 = (P <-> Q)
+The proposition is a tautology
+
+
+F9 = ((((P -> Q) -> R) -> S) -> ((Q -> R) -> (P -> S)))
+The proposition is a tautology
+
+
+F10 = ((- S) & (- T))
+The proposition is not a tautology
+
+
+F11 = ((P -> Q) & (Q -> R))
+The proposition is not a tautology
+
+
+F12 = (((P -> Q) & (Q -> R)) -> (P -> R))
+The proposition is a tautology
+
+
+F13 = ((P & Q) -> P)
+The proposition is a tautology
+
+
+F14 = ((P -> Q) -> ((- Q) -> (- P)))
+The proposition is a tautology
+
+
+F15 = ((P -> (- Q)) V ((- P) & (- Q)))
+The proposition is not a tautology
+
+
+F16 = ((P -> (- Q)) V (P & Q))
+The proposition is a tautology
+
+
+F17 = ((P -> Q) <-> ((- Q) -> (- P)))
+The proposition is a tautology
+
+
+F18 = ((P -> Q) -> ((- Q) -> (- P)))
+The proposition is a tautology
+
+
+F19 = (((- Q) -> (- P)) -> (P -> Q))
+The proposition is a tautology
+
+
+F20 = (P -> ((P -> Q) <-> Q))
+The proposition is a tautology
+
+
+F21 = (((P & Q) -> R) <-> ((P & (- R)) -> Q))
+The proposition is not a tautology
+
+
+F22 = ((P -> (- Q)) V ((- P) & (- Q)))
+The proposition is not a tautology
+
+
+F23 = (P -> ((- P) -> Q))
+The proposition is a tautology
+
+
+F24 = (((- P) -> Q) -> ((- Q) -> P))
+The proposition is a tautology
+
+
+F25 = (((- P) -> P) -> P)
+The proposition is a tautology
+
+
+F26 = (((- P) -> P) -> (- P))
+The proposition is not a tautology
+
+
+F27 = ((- (P -> Q)) -> P)
+The proposition is a tautology
+
+
+F28 = ((P <-> Q) <-> (Q <-> P))
+The proposition is a tautology
+
+
+F29 = ((P <-> Q) -> (Q <-> P))
+The proposition is a tautology
+
+
+F30 = ((P <-> Q) -> (Q -> P))
+The proposition is a tautology

@@ -1,0 +1,1563 @@
+F9 = ((((P -> Q) -> R) -> S) -> ((Q -> R) -> (P -> S)))
+
+Negating the proposition: ((((P -> Q) -> R) -> S) ->
+                           ((Q -> R) -> (P -> S)))
+The negation is:      (-
+                       ((((P -> Q) -> R) -> S) -> ((Q -> R) -> (P -> S))))
+
+Finding the CNF of:  (- ((((P -> Q) -> R) -> S) -> ((Q -> R) -> (P -> S))))
+
+   -Removing Arrows from: (-
+                           ((((P -> Q) -> R) -> S) ->
+                            ((Q -> R) -> (P -> S))))
+           The result is: (-
+                           ((- ((- ((- ((- P) V Q)) V R)) V S)) V
+                            ((- ((- Q) V R)) V ((- P) V S))))
+
+   -Bringing in negation in: (-
+                              ((- ((- ((- ((- P) V Q)) V R)) V S)) V
+                               ((- ((- Q) V R)) V ((- P) V S))))
+              The result is: (((((- P) V Q) & (- R)) V S) &
+                              (((- Q) V R) & (P & (- S))))
+
+   -Distributing disjunction in: (((((- P) V Q) & (- R)) V S) &
+                                  (((- Q) V R) & (P & (- S))))
+                  The result is: (((((- P) V Q) V S) & ((- R) V S)) &
+                                  (((- Q) V R) & (P & (- S))))
+
+The CNF is:           (((((- P) V Q) V S) & ((- R) V S)) &
+                       (((- Q) V R) & (P & (- S))))
+
+Stripping &'s and V's from: (((((- P) V Q) V S) & ((- R) V S)) &
+                             (((- Q) V R) & (P & (- S))))
+              The result is: (((- P) Q S) ((- R) S) ((- Q) R) (P) ((- S)))
+
+The unchecked part of the data base is:
+((- P) Q S),  ((- R) S),  ((- Q) R),  (P),  and ((- S))
+
+Checking the resolution of ((- P) Q S) and ((- R) S)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and ((- Q) R)
+They resolve
+The result is ((- P) S R)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- P) Q S),  ((- R) S),  ((- Q) R),  (P),  ((- S)),  and ((- P) S R)
+
+Checking the resolution of ((- P) Q S) and ((- R) S)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and ((- Q) R)
+They resolve
+The result is ((- P) S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and (P)
+They resolve
+The result is (Q S)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- P) Q S),  ((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  and (Q
+                                                                         S)
+
+Checking the resolution of ((- P) Q S) and ((- R) S)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and ((- Q) R)
+They resolve
+The result is ((- P) S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and (P)
+They resolve
+The result is (Q S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and ((- S))
+They resolve
+The result is ((- P) Q)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- P) Q S),  ((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  and ((-
+                                                                                  P)
+                                                                                 Q)
+
+Checking the resolution of ((- P) Q S) and ((- R) S)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and ((- Q) R)
+They resolve
+The result is ((- P) S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and (P)
+They resolve
+The result is (Q S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and ((- S))
+They resolve
+The result is ((- P) Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q S) and ((- P) S R)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and (Q S)
+They do not resolve
+
+Checking the resolution of ((- P) Q S) and ((- P) Q)
+They do not resolve
+The unchecked part of the data base is:
+((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  and ((- P) Q)
+
+Checking the resolution of ((- R) S) and ((- Q) R)
+They resolve
+The result is (S (- Q))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  and (S
+                                                                               (-
+                                                                                Q))
+
+Checking the resolution of ((- R) S) and ((- Q) R)
+They resolve
+The result is (S (- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and (P)
+They do not resolve
+
+Checking the resolution of ((- R) S) and ((- S))
+They resolve
+The result is ((- R))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S
+                                                                           (-
+                                                                            Q)),  and ((-
+                                                                                        R))
+
+Checking the resolution of ((- R) S) and ((- Q) R)
+They resolve
+The result is (S (- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and (P)
+They do not resolve
+
+Checking the resolution of ((- R) S) and ((- S))
+They resolve
+The result is ((- R))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and ((- P) S R)
+They resolve
+The result is (S (- P) S)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- R) S),  ((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S
+                                                                           (-
+                                                                            Q)),  ((-
+                                                                                    R)),  and (S
+                                                                                               (-
+                                                                                                P)
+                                                                                               S)
+
+Checking the resolution of ((- R) S) and ((- Q) R)
+They resolve
+The result is (S (- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and (P)
+They do not resolve
+
+Checking the resolution of ((- R) S) and ((- S))
+They resolve
+The result is ((- R))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and ((- P) S R)
+They resolve
+The result is (S (- P) S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) S) and (Q S)
+They do not resolve
+
+Checking the resolution of ((- R) S) and ((- P) Q)
+They do not resolve
+
+Checking the resolution of ((- R) S) and (S (- Q))
+They do not resolve
+
+Checking the resolution of ((- R) S) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- R) S) and (S (- P) S)
+They do not resolve
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((-
+                                                                            R)),  and (S
+                                                                                       (-
+                                                                                        P)
+                                                                                       S)
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- S))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- P) S R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q S)
+They resolve
+The result is (R S)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((-
+                                                                            R)),  (S
+                                                                                   (-
+                                                                                    P)
+                                                                                   S),  and (R
+                                                                                             S)
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- S))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- P) S R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q S)
+They resolve
+The result is (R S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- P) Q)
+They resolve
+The result is (R (- P))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((-
+                                                                            R)),  (S
+                                                                                   (-
+                                                                                    P)
+                                                                                   S),  (R
+                                                                                         S),  and (R
+                                                                                                   (-
+                                                                                                    P))
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- S))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- P) S R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q S)
+They resolve
+The result is (R S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- P) Q)
+They resolve
+The result is (R (- P))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and (S (- Q))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- R))
+They resolve
+The result is ((- Q))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((-
+                                                                            R)),  (S
+                                                                                   (-
+                                                                                    P)
+                                                                                   S),  (R
+                                                                                         S),  (R
+                                                                                               (-
+                                                                                                P)),  and ((-
+                                                                                                            Q))
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- S))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- P) S R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q S)
+They resolve
+The result is (R S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- P) Q)
+They resolve
+The result is (R (- P))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and (S (- Q))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- R))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and (S (- P) S)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (R S)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (R (- P))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- Q))
+They do not resolve
+The unchecked part of the data base is:
+(P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S
+                                                                         (-
+                                                                          P)
+                                                                         S),  (R
+                                                                               S),  (R
+                                                                                     (-
+                                                                                      P)),  and ((-
+                                                                                                  Q))
+
+Checking the resolution of (P) and ((- S))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) S R)
+They resolve
+The result is (S R)
+
+Adding to the data base
+The unchecked part of the data base is:
+(P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S
+                                                                         (-
+                                                                          P)
+                                                                         S),  (R
+                                                                               S),  (R
+                                                                                     (-
+                                                                                      P)),  ((-
+                                                                                              Q)),  and (S
+                                                                                                         R)
+
+Checking the resolution of (P) and ((- S))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) S R)
+They resolve
+The result is (S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (Q S)
+They do not resolve
+
+Checking the resolution of (P) and ((- P) Q)
+They resolve
+The result is (Q)
+
+Adding to the data base
+The unchecked part of the data base is:
+(P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S
+                                                                         (-
+                                                                          P)
+                                                                         S),  (R
+                                                                               S),  (R
+                                                                                     (-
+                                                                                      P)),  ((-
+                                                                                              Q)),  (S
+                                                                                                     R),  and (Q)
+
+Checking the resolution of (P) and ((- S))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) S R)
+They resolve
+The result is (S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (Q S)
+They do not resolve
+
+Checking the resolution of (P) and ((- P) Q)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (S (- Q))
+They do not resolve
+
+Checking the resolution of (P) and ((- R))
+They do not resolve
+
+Checking the resolution of (P) and (S (- P) S)
+They resolve
+The result is (S S)
+
+Adding to the data base
+The unchecked part of the data base is:
+(P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S
+                                                                         (-
+                                                                          P)
+                                                                         S),  (R
+                                                                               S),  (R
+                                                                                     (-
+                                                                                      P)),  ((-
+                                                                                              Q)),  (S
+                                                                                                     R),  (Q),  and (S
+                                                                                                                     S)
+
+Checking the resolution of (P) and ((- S))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) S R)
+They resolve
+The result is (S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (Q S)
+They do not resolve
+
+Checking the resolution of (P) and ((- P) Q)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (S (- Q))
+They do not resolve
+
+Checking the resolution of (P) and ((- R))
+They do not resolve
+
+Checking the resolution of (P) and (S (- P) S)
+They resolve
+The result is (S S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (R S)
+They do not resolve
+
+Checking the resolution of (P) and (R (- P))
+They resolve
+The result is (R)
+
+Adding to the data base
+The unchecked part of the data base is:
+(P),  ((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S
+                                                                         (-
+                                                                          P)
+                                                                         S),  (R
+                                                                               S),  (R
+                                                                                     (-
+                                                                                      P)),  ((-
+                                                                                              Q)),  (S
+                                                                                                     R),  (Q),  (S
+                                                                                                                 S),  and (R)
+
+Checking the resolution of (P) and ((- S))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) S R)
+They resolve
+The result is (S R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (Q S)
+They do not resolve
+
+Checking the resolution of (P) and ((- P) Q)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (S (- Q))
+They do not resolve
+
+Checking the resolution of (P) and ((- R))
+They do not resolve
+
+Checking the resolution of (P) and (S (- P) S)
+They resolve
+The result is (S S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (R S)
+They do not resolve
+
+Checking the resolution of (P) and (R (- P))
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and ((- Q))
+They do not resolve
+
+Checking the resolution of (P) and (S R)
+They do not resolve
+
+Checking the resolution of (P) and (Q)
+They do not resolve
+
+Checking the resolution of (P) and (S S)
+They do not resolve
+
+Checking the resolution of (P) and (R)
+They do not resolve
+The unchecked part of the data base is:
+((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S (- P)
+                                                                   S),  (R
+                                                                         S),  (R
+                                                                               (-
+                                                                                P)),  ((-
+                                                                                        Q)),  (S
+                                                                                               R),  (Q),  (S
+                                                                                                           S),  and (R)
+
+Checking the resolution of ((- S)) and ((- P) S R)
+They resolve
+The result is ((- P) R)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S (- P)
+                                                                   S),  (R
+                                                                         S),  (R
+                                                                               (-
+                                                                                P)),  ((-
+                                                                                        Q)),  (S
+                                                                                               R),  (Q),  (S
+                                                                                                           S),  (R),  and ((-
+                                                                                                                            P)
+                                                                                                                           R)
+
+Checking the resolution of ((- S)) and ((- P) S R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q S)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- P) Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- Q))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- P) S)
+They resolve
+The result is ((- P) S)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S (- P)
+                                                                   S),  (R
+                                                                         S),  (R
+                                                                               (-
+                                                                                P)),  ((-
+                                                                                        Q)),  (S
+                                                                                               R),  (Q),  (S
+                                                                                                           S),  (R),  ((-
+                                                                                                                        P)
+                                                                                                                       R),  and ((-
+                                                                                                                                  P)
+                                                                                                                                 S)
+
+Checking the resolution of ((- S)) and ((- P) S R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q S)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- P) Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- Q))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- P) S)
+They resolve
+The result is ((- P) S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R S)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R (- P))
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- Q))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S R)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S S)
+They resolve
+The result is (S)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S (- P)
+                                                                   S),  (R
+                                                                         S),  (R
+                                                                               (-
+                                                                                P)),  ((-
+                                                                                        Q)),  (S
+                                                                                               R),  (Q),  (S
+                                                                                                           S),  (R),  ((-
+                                                                                                                        P)
+                                                                                                                       R),  ((-
+                                                                                                                              P)
+                                                                                                                             S),  and (S)
+
+Checking the resolution of ((- S)) and ((- P) S R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q S)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- P) Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- Q))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- P) S)
+They resolve
+The result is ((- P) S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R S)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R (- P))
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- Q))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S R)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S S)
+They resolve
+The result is (S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R)
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- P) R)
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- P) S)
+They resolve
+The result is ((- P))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- S)),  ((- P) S R),  (Q S),  ((- P) Q),  (S (- Q)),  ((- R)),  (S (- P)
+                                                                   S),  (R
+                                                                         S),  (R
+                                                                               (-
+                                                                                P)),  ((-
+                                                                                        Q)),  (S
+                                                                                               R),  (Q),  (S
+                                                                                                           S),  (R),  ((-
+                                                                                                                        P)
+                                                                                                                       R),  ((-
+                                                                                                                              P)
+                                                                                                                             S),  (S),  and ((-
+                                                                                                                                              P))
+
+Checking the resolution of ((- S)) and ((- P) S R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q S)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- P) Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- Q))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S (- P) S)
+They resolve
+The result is ((- P) S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R S)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R (- P))
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- Q))
+They do not resolve
+
+Checking the resolution of ((- S)) and (S R)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (Q)
+They do not resolve
+
+Checking the resolution of ((- S)) and (S S)
+They resolve
+The result is (S)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (R)
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- P) R)
+They do not resolve
+
+Checking the resolution of ((- S)) and ((- P) S)
+They resolve
+The result is ((- P))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- S)) and (S)
+They resolve
+The result is NIL
+The proposition is a tautology
+
+
+F12 = (((P -> Q) & (Q -> R)) -> (P -> R))
+
+Negating the proposition: (((P -> Q) & (Q -> R)) -> (P -> R))
+The negation is:      (- (((P -> Q) & (Q -> R)) -> (P -> R)))
+
+Finding the CNF of:  (- (((P -> Q) & (Q -> R)) -> (P -> R)))
+
+   -Removing Arrows from: (- (((P -> Q) & (Q -> R)) -> (P -> R)))
+           The result is: (-
+                           ((- (((- P) V Q) & ((- Q) V R))) V ((- P) V R)))
+
+   -Bringing in negation in: (-
+                              ((- (((- P) V Q) & ((- Q) V R))) V
+                               ((- P) V R)))
+              The result is: ((((- P) V Q) & ((- Q) V R)) & (P & (- R)))
+
+   -Distributing disjunction in: ((((- P) V Q) & ((- Q) V R)) &
+                                  (P & (- R)))
+                  The result is: ((((- P) V Q) & ((- Q) V R)) &
+                                  (P & (- R)))
+
+The CNF is:           ((((- P) V Q) & ((- Q) V R)) & (P & (- R)))
+
+Stripping &'s and V's from: ((((- P) V Q) & ((- Q) V R)) & (P & (- R)))
+              The result is: (((- P) Q) ((- Q) R) (P) ((- R)))
+
+The unchecked part of the data base is:
+((- P) Q),  ((- Q) R),  (P),  and ((- R))
+
+Checking the resolution of ((- P) Q) and ((- Q) R)
+They resolve
+The result is ((- P) R)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- P) Q),  ((- Q) R),  (P),  ((- R)),  and ((- P) R)
+
+Checking the resolution of ((- P) Q) and ((- Q) R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q) and (P)
+They resolve
+The result is (Q)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- P) Q),  ((- Q) R),  (P),  ((- R)),  ((- P) R),  and (Q)
+
+Checking the resolution of ((- P) Q) and ((- Q) R)
+They resolve
+The result is ((- P) R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q) and (P)
+They resolve
+The result is (Q)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- P) Q) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- P) Q) and ((- P) R)
+They do not resolve
+
+Checking the resolution of ((- P) Q) and (Q)
+They do not resolve
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- R)),  ((- P) R),  and (Q)
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- R))
+They resolve
+The result is ((- Q))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- R)),  ((- P) R),  (Q),  and ((- Q))
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- R))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- P) R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q)
+They resolve
+The result is (R)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) R),  (P),  ((- R)),  ((- P) R),  (Q),  ((- Q)),  and (R)
+
+Checking the resolution of ((- Q) R) and (P)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and ((- R))
+They resolve
+The result is ((- Q))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- P) R)
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (Q)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) R) and ((- Q))
+They do not resolve
+
+Checking the resolution of ((- Q) R) and (R)
+They do not resolve
+The unchecked part of the data base is:
+(P),  ((- R)),  ((- P) R),  (Q),  ((- Q)),  and (R)
+
+Checking the resolution of (P) and ((- R))
+They do not resolve
+
+Checking the resolution of (P) and ((- P) R)
+They resolve
+The result is (R)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P) and (Q)
+They do not resolve
+
+Checking the resolution of (P) and ((- Q))
+They do not resolve
+
+Checking the resolution of (P) and (R)
+They do not resolve
+The unchecked part of the data base is:
+((- R)),  ((- P) R),  (Q),  ((- Q)),  and (R)
+
+Checking the resolution of ((- R)) and ((- P) R)
+They resolve
+The result is ((- P))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- R)),  ((- P) R),  (Q),  ((- Q)),  (R),  and ((- P))
+
+Checking the resolution of ((- R)) and ((- P) R)
+They resolve
+The result is ((- P))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R)) and (Q)
+They do not resolve
+
+Checking the resolution of ((- R)) and ((- Q))
+They do not resolve
+
+Checking the resolution of ((- R)) and (R)
+They resolve
+The result is NIL
+The proposition is a tautology
+
+
+F17 = ((P -> Q) <-> ((- Q) -> (- P)))
+
+Negating the proposition: ((P -> Q) <-> ((- Q) -> (- P)))
+The negation is:      (- ((P -> Q) <-> ((- Q) -> (- P))))
+
+Finding the CNF of:  (- ((P -> Q) <-> ((- Q) -> (- P))))
+
+   -Removing Arrows from: (- ((P -> Q) <-> ((- Q) -> (- P))))
+           The result is: (-
+                           (((- ((- P) V Q)) V (Q V (- P))) &
+                            ((- (Q V (- P))) V ((- P) V Q))))
+
+   -Bringing in negation in: (-
+                              (((- ((- P) V Q)) V (Q V (- P))) &
+                               ((- (Q V (- P))) V ((- P) V Q))))
+              The result is: ((((- P) V Q) & ((- Q) & P)) V
+                              ((Q V (- P)) & (P & (- Q))))
+
+   -Distributing disjunction in: ((((- P) V Q) & ((- Q) & P)) V
+                                  ((Q V (- P)) & (P & (- Q))))
+                  The result is: (((((- P) V Q) V (Q V (- P))) &
+                                   (((- Q) V (Q V (- P))) &
+                                    (P V (Q V (- P)))))
+                                  &
+                                  (((((- P) V Q) V P) & (((- Q) V P) & P))
+                                   &
+                                   ((((- P) V Q) V (- Q)) &
+                                    ((- Q) & (P V (- Q))))))
+
+The CNF is:           (((((- P) V Q) V (Q V (- P))) &
+                        (((- Q) V (Q V (- P))) & (P V (Q V (- P)))))
+                       &
+                       (((((- P) V Q) V P) & (((- Q) V P) & P)) &
+                        ((((- P) V Q) V (- Q)) & ((- Q) & (P V (- Q))))))
+
+Stripping &'s and V's from: (((((- P) V Q) V (Q V (- P))) &
+                              (((- Q) V (Q V (- P))) & (P V (Q V (- P)))))
+                             &
+                             (((((- P) V Q) V P) & (((- Q) V P) & P)) &
+                              ((((- P) V Q) V (- Q)) &
+                               ((- Q) & (P V (- Q))))))
+              The result is: (((- P) Q Q (- P)) ((- Q) Q (- P))
+                              (P Q (- P)) ((- P) Q P) ((- Q) P) (P)
+                              ((- P) Q (- Q)) ((- Q)) (P (- Q)))
+
+The unchecked part of the data base is:
+(Q (- P)),  ((- Q) P),  (P),  ((- Q)),  and (P (- Q))
+
+Checking the resolution of (Q (- P)) and ((- Q) P)
+They resolve
+The result is NIL
+The proposition is a tautology
+
+
+F21 = (((P & Q) -> R) <-> ((P & (- R)) -> Q))
+
+Negating the proposition: (((P & Q) -> R) <-> ((P & (- R)) -> Q))
+The negation is:      (- (((P & Q) -> R) <-> ((P & (- R)) -> Q)))
+
+Finding the CNF of:  (- (((P & Q) -> R) <-> ((P & (- R)) -> Q)))
+
+   -Removing Arrows from: (- (((P & Q) -> R) <-> ((P & (- R)) -> Q)))
+           The result is: (-
+                           (((- ((- (P & Q)) V R)) V
+                             ((- (P & (- R))) V Q))
+                            &
+                            ((- ((- (P & (- R))) V Q)) V
+                             ((- (P & Q)) V R))))
+
+   -Bringing in negation in: (-
+                              (((- ((- (P & Q)) V R)) V
+                                ((- (P & (- R))) V Q))
+                               &
+                               ((- ((- (P & (- R))) V Q)) V
+                                ((- (P & Q)) V R))))
+              The result is: (((((- P) V (- Q)) V R) &
+                               ((P & (- R)) & (- Q)))
+                              V ((((- P) V R) V Q) & ((P & Q) & (- R))))
+
+   -Distributing disjunction in: (((((- P) V (- Q)) V R) &
+                                   ((P & (- R)) & (- Q)))
+                                  V
+                                  ((((- P) V R) V Q) & ((P & Q) & (- R))))
+                  The result is: ((((((- P) V (- Q)) V R) V
+                                    (((- P) V R) V Q))
+                                   &
+                                   (((P V (((- P) V R) V Q)) &
+                                     ((- R) V (((- P) V R) V Q)))
+                                    & ((- Q) V (((- P) V R) V Q))))
+                                  &
+                                  (((((((- P) V (- Q)) V R) V P) &
+                                     ((P & ((- R) V P)) & ((- Q) V P)))
+                                    &
+                                    (((((- P) V (- Q)) V R) V Q) &
+                                     (((P V Q) & ((- R) V Q)) &
+                                      ((- Q) V Q))))
+                                   &
+                                   (((((- P) V (- Q)) V R) V (- R)) &
+                                    (((P V (- R)) & (- R)) &
+                                     ((- Q) V (- R))))))
+
+The CNF is:           ((((((- P) V (- Q)) V R) V (((- P) V R) V Q)) &
+                        (((P V (((- P) V R) V Q)) &
+                          ((- R) V (((- P) V R) V Q)))
+                         & ((- Q) V (((- P) V R) V Q))))
+                       &
+                       (((((((- P) V (- Q)) V R) V P) &
+                          ((P & ((- R) V P)) & ((- Q) V P)))
+                         &
+                         (((((- P) V (- Q)) V R) V Q) &
+                          (((P V Q) & ((- R) V Q)) & ((- Q) V Q))))
+                        &
+                        (((((- P) V (- Q)) V R) V (- R)) &
+                         (((P V (- R)) & (- R)) & ((- Q) V (- R))))))
+
+Stripping &'s and V's from: ((((((- P) V (- Q)) V R) V (((- P) V R) V Q))
+                              &
+                              (((P V (((- P) V R) V Q)) &
+                                ((- R) V (((- P) V R) V Q)))
+                               & ((- Q) V (((- P) V R) V Q))))
+                             &
+                             (((((((- P) V (- Q)) V R) V P) &
+                                ((P & ((- R) V P)) & ((- Q) V P)))
+                               &
+                               (((((- P) V (- Q)) V R) V Q) &
+                                (((P V Q) & ((- R) V Q)) & ((- Q) V Q))))
+                              &
+                              (((((- P) V (- Q)) V R) V (- R)) &
+                               (((P V (- R)) & (- R)) & ((- Q) V (- R))))))
+              The result is: (((- P) (- Q) R (- P) R Q) (P (- P) R Q)
+                              ((- R) (- P) R Q) ((- Q) (- P) R Q)
+                              ((- P) (- Q) R P) (P) ((- R) P) ((- Q) P)
+                              ((- P) (- Q) R Q) (P Q) ((- R) Q) ((- Q) Q)
+                              ((- P) (- Q) R (- R)) (P (- R)) ((- R))
+                              ((- Q) (- R)))
+
+The unchecked part of the data base is:
+(P),  ((- R) P),  ((- Q) P),  (P Q),  ((- R) Q),  (P (- R)),  ((- R)),  and ((-
+                                                                              Q)
+                                                                             (-
+                                                                              R))
+
+Checking the resolution of (P) and ((- R) P)
+They do not resolve
+
+Checking the resolution of (P) and ((- Q) P)
+They do not resolve
+
+Checking the resolution of (P) and (P Q)
+They do not resolve
+
+Checking the resolution of (P) and ((- R) Q)
+They do not resolve
+
+Checking the resolution of (P) and (P (- R))
+They do not resolve
+
+Checking the resolution of (P) and ((- R))
+They do not resolve
+
+Checking the resolution of (P) and ((- Q) (- R))
+They do not resolve
+The unchecked part of the data base is:
+((- R) P),  ((- Q) P),  (P Q),  ((- R) Q),  (P (- R)),  ((- R)),  and ((-
+                                                                        Q)
+                                                                       (-
+                                                                        R))
+
+Checking the resolution of ((- R) P) and ((- Q) P)
+They do not resolve
+
+Checking the resolution of ((- R) P) and (P Q)
+They do not resolve
+
+Checking the resolution of ((- R) P) and ((- R) Q)
+They do not resolve
+
+Checking the resolution of ((- R) P) and (P (- R))
+They do not resolve
+
+Checking the resolution of ((- R) P) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- R) P) and ((- Q) (- R))
+They do not resolve
+The unchecked part of the data base is:
+((- Q) P),  (P Q),  ((- R) Q),  (P (- R)),  ((- R)),  and ((- Q) (- R))
+
+Checking the resolution of ((- Q) P) and (P Q)
+They resolve
+The result is (P P)
+
+Adding to the data base
+The unchecked part of the data base is:
+((- Q) P),  (P Q),  ((- R) Q),  (P (- R)),  ((- R)),  ((- Q) (- R)),  and (P
+                                                                           P)
+
+Checking the resolution of ((- Q) P) and (P Q)
+They resolve
+The result is (P P)
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) P) and ((- R) Q)
+They resolve
+The result is (P (- R))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- Q) P) and (P (- R))
+They do not resolve
+
+Checking the resolution of ((- Q) P) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- Q) P) and ((- Q) (- R))
+They do not resolve
+
+Checking the resolution of ((- Q) P) and (P P)
+They do not resolve
+The unchecked part of the data base is:
+(P Q),  ((- R) Q),  (P (- R)),  ((- R)),  ((- Q) (- R)),  and (P P)
+
+Checking the resolution of (P Q) and ((- R) Q)
+They do not resolve
+
+Checking the resolution of (P Q) and (P (- R))
+They do not resolve
+
+Checking the resolution of (P Q) and ((- R))
+They do not resolve
+
+Checking the resolution of (P Q) and ((- Q) (- R))
+They resolve
+The result is (P (- R))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of (P Q) and (P P)
+They do not resolve
+The unchecked part of the data base is:
+((- R) Q),  (P (- R)),  ((- R)),  ((- Q) (- R)),  and (P P)
+
+Checking the resolution of ((- R) Q) and (P (- R))
+They do not resolve
+
+Checking the resolution of ((- R) Q) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- R) Q) and ((- Q) (- R))
+They resolve
+The result is ((- R) (- R))
+
+Adding to the data base
+The unchecked part of the data base is:
+((- R) Q),  (P (- R)),  ((- R)),  ((- Q) (- R)),  (P P),  and ((- R) (- R))
+
+Checking the resolution of ((- R) Q) and (P (- R))
+They do not resolve
+
+Checking the resolution of ((- R) Q) and ((- R))
+They do not resolve
+
+Checking the resolution of ((- R) Q) and ((- Q) (- R))
+They resolve
+The result is ((- R) (- R))
+It is already in the data base -- not adding it
+
+
+Checking the resolution of ((- R) Q) and (P P)
+They do not resolve
+
+Checking the resolution of ((- R) Q) and ((- R) (- R))
+They do not resolve
+The unchecked part of the data base is:
+(P (- R)),  ((- R)),  ((- Q) (- R)),  (P P),  and ((- R) (- R))
+
+Checking the resolution of (P (- R)) and ((- R))
+They do not resolve
+
+Checking the resolution of (P (- R)) and ((- Q) (- R))
+They do not resolve
+
+Checking the resolution of (P (- R)) and (P P)
+They do not resolve
+
+Checking the resolution of (P (- R)) and ((- R) (- R))
+They do not resolve
+The unchecked part of the data base is:
+((- R)),  ((- Q) (- R)),  (P P),  and ((- R) (- R))
+
+Checking the resolution of ((- R)) and ((- Q) (- R))
+They do not resolve
+
+Checking the resolution of ((- R)) and (P P)
+They do not resolve
+
+Checking the resolution of ((- R)) and ((- R) (- R))
+They do not resolve
+The unchecked part of the data base is:
+((- Q) (- R)),  (P P),  and ((- R) (- R))
+
+Checking the resolution of ((- Q) (- R)) and (P P)
+They do not resolve
+
+Checking the resolution of ((- Q) (- R)) and ((- R) (- R))
+They do not resolve
+The unchecked part of the data base is:
+(P P),  and ((- R) (- R))
+
+Checking the resolution of (P P) and ((- R) (- R))
+They do not resolve
+The unchecked part of the data base is:
+(((- R) (- R)))
+The proposition is not a tautology
+
+
+F28 = ((P <-> Q) <-> (Q <-> P))
+
+Negating the proposition: ((P <-> Q) <-> (Q <-> P))
+The negation is:      (- ((P <-> Q) <-> (Q <-> P)))
+
+Finding the CNF of:  (- ((P <-> Q) <-> (Q <-> P)))
+
+   -Removing Arrows from: (- ((P <-> Q) <-> (Q <-> P)))
+           The result is: (-
+                           (((- (((- P) V Q) & ((- Q) V P))) V
+                             (((- Q) V P) & ((- P) V Q)))
+                            &
+                            ((- (((- Q) V P) & ((- P) V Q))) V
+                             (((- P) V Q) & ((- Q) V P)))))
+
+   -Bringing in negation in: (-
+                              (((- (((- P) V Q) & ((- Q) V P))) V
+                                (((- Q) V P) & ((- P) V Q)))
+                               &
+                               ((- (((- Q) V P) & ((- P) V Q))) V
+                                (((- P) V Q) & ((- Q) V P)))))
+              The result is: (((((- P) V Q) & ((- Q) V P)) &
+                               ((Q & (- P)) V (P & (- Q))))
+                              V
+                              ((((- Q) V P) & ((- P) V Q)) &
+                               ((P & (- Q)) V (Q & (- P)))))
+
+   -Distributing disjunction in: (((((- P) V Q) & ((- Q) V P)) &
+                                   ((Q & (- P)) V (P & (- Q))))
+                                  V
+                                  ((((- Q) V P) & ((- P) V Q)) &
+                                   ((P & (- Q)) V (Q & (- P)))))
+                  The result is: (((((((- P) V Q) V ((- Q) V P)) &
+                                     ((- Q) V P))
+                                    &
+                                    ((((Q V P) V ((- Q) V P)) &
+                                      (((- P) V P) V ((- Q) V P)))
+                                     &
+                                     (((Q V (- Q)) V ((- Q) V P)) &
+                                      (((- P) V (- Q)) V ((- Q) V P)))))
+                                   &
+                                   ((((- P) V Q) &
+                                     (((- Q) V P) V ((- P) V Q)))
+                                    &
+                                    ((((Q V P) V ((- P) V Q)) &
+                                      (((- P) V P) V ((- P) V Q)))
+                                     &
+                                     (((Q V (- Q)) V ((- P) V Q)) &
+                                      (((- P) V (- Q)) V ((- P) V Q))))))
+                                  &
+                                  (((((((- P) V Q) V (P V Q)) &
+                                      (((- Q) V P) V (P V Q)))
+                                     &
+                                     ((((Q V P) V (P V Q)) &
+                                       (((- P) V P) V (P V Q)))
+                                      &
+                                      (((Q V (- Q)) V (P V Q)) &
+                                       (((- P) V (- Q)) V (P V Q)))))
+                                    &
+                                    (((((- P) V Q) V ((- Q) V Q)) &
+                                      (((- Q) V P) V ((- Q) V Q)))
+                                     &
+                                     ((((Q V P) V ((- Q) V Q)) &
+                                       (((- P) V P) V ((- Q) V Q)))
+                                      &
+                                      (((Q V (- Q)) V ((- Q) V Q)) &
+                                       (((- P) V (- Q)) V ((- Q) V Q))))))
+                                   &
+                                   ((((((- P) V Q) V (P V (- P))) &
+                                      (((- Q) V P) V (P V (- P))))
+                                     &
+                                     ((((Q V P) V (P V (- P))) &
+                                       (((- P) V P) V (P V (- P))))
+                                      &
+                                      (((Q V (- Q)) V (P V (- P))) &
+                                       (((- P) V (- Q)) V (P V (- P))))))
+                                    &
+                                    (((((- P) V Q) V ((- Q) V (- P))) &
+                                      (((- Q) V P) V ((- Q) V (- P))))
+                                     &
+                                     ((((Q V P) V ((- Q) V (- P))) &
+                                       (((- P) V P) V ((- Q) V (- P))))
+                                      &
+                                      (((Q V (- Q)) V ((- Q) V (- P))) &
+                                       (((- P) V (- Q)) V
+                                        ((- Q) V (- P)))))))))
+
+The CNF is:           (((((((- P) V Q) V ((- Q) V P)) & ((- Q) V P)) &
+                         ((((Q V P) V ((- Q) V P)) &
+                           (((- P) V P) V ((- Q) V P)))
+                          &
+                          (((Q V (- Q)) V ((- Q) V P)) &
+                           (((- P) V (- Q)) V ((- Q) V P)))))
+                        &
+                        ((((- P) V Q) & (((- Q) V P) V ((- P) V Q))) &
+                         ((((Q V P) V ((- P) V Q)) &
+                           (((- P) V P) V ((- P) V Q)))
+                          &
+                          (((Q V (- Q)) V ((- P) V Q)) &
+                           (((- P) V (- Q)) V ((- P) V Q))))))
+                       &
+                       (((((((- P) V Q) V (P V Q)) &
+                           (((- Q) V P) V (P V Q)))
+                          &
+                          ((((Q V P) V (P V Q)) & (((- P) V P) V (P V Q)))
+                           &
+                           (((Q V (- Q)) V (P V Q)) &
+                            (((- P) V (- Q)) V (P V Q)))))
+                         &
+                         (((((- P) V Q) V ((- Q) V Q)) &
+                           (((- Q) V P) V ((- Q) V Q)))
+                          &
+                          ((((Q V P) V ((- Q) V Q)) &
+                            (((- P) V P) V ((- Q) V Q)))
+                           &
+                           (((Q V (- Q)) V ((- Q) V Q)) &
+                            (((- P) V (- Q)) V ((- Q) V Q))))))
+                        &
+                        ((((((- P) V Q) V (P V (- P))) &
+                           (((- Q) V P) V (P V (- P))))
+                          &
+                          ((((Q V P) V (P V (- P))) &
+                            (((- P) V P) V (P V (- P))))
+                           &
+                           (((Q V (- Q)) V (P V (- P))) &
+                            (((- P) V (- Q)) V (P V (- P))))))
+                         &
+                         (((((- P) V Q) V ((- Q) V (- P))) &
+                           (((- Q) V P) V ((- Q) V (- P))))
+                          &
+                          ((((Q V P) V ((- Q) V (- P))) &
+                            (((- P) V P) V ((- Q) V (- P))))
+                           &
+                           (((Q V (- Q)) V ((- Q) V (- P))) &
+                            (((- P) V (- Q)) V ((- Q) V (- P)))))))))
+
+Stripping &'s and V's from: (((((((- P) V Q) V ((- Q) V P)) & ((- Q) V P))
+                               &
+                               ((((Q V P) V ((- Q) V P)) &
+                                 (((- P) V P) V ((- Q) V P)))
+                                &
+                                (((Q V (- Q)) V ((- Q) V P)) &
+                                 (((- P) V (- Q)) V ((- Q) V P)))))
+                              &
+                              ((((- P) V Q) & (((- Q) V P) V ((- P) V Q)))
+                               &
+                               ((((Q V P) V ((- P) V Q)) &
+                                 (((- P) V P) V ((- P) V Q)))
+                                &
+                                (((Q V (- Q)) V ((- P) V Q)) &
+                                 (((- P) V (- Q)) V ((- P) V Q))))))
+                             &
+                             (((((((- P) V Q) V (P V Q)) &
+                                 (((- Q) V P) V (P V Q)))
+                                &
+                                ((((Q V P) V (P V Q)) &
+                                  (((- P) V P) V (P V Q)))
+                                 &
+                                 (((Q V (- Q)) V (P V Q)) &
+                                  (((- P) V (- Q)) V (P V Q)))))
+                               &
+                               (((((- P) V Q) V ((- Q) V Q)) &
+                                 (((- Q) V P) V ((- Q) V Q)))
+                                &
+                                ((((Q V P) V ((- Q) V Q)) &
+                                  (((- P) V P) V ((- Q) V Q)))
+                                 &
+                                 (((Q V (- Q)) V ((- Q) V Q)) &
+                                  (((- P) V (- Q)) V ((- Q) V Q))))))
+                              &
+                              ((((((- P) V Q) V (P V (- P))) &
+                                 (((- Q) V P) V (P V (- P))))
+                                &
+                                ((((Q V P) V (P V (- P))) &
+                                  (((- P) V P) V (P V (- P))))
+                                 &
+                                 (((Q V (- Q)) V (P V (- P))) &
+                                  (((- P) V (- Q)) V (P V (- P))))))
+                               &
+                               (((((- P) V Q) V ((- Q) V (- P))) &
+                                 (((- Q) V P) V ((- Q) V (- P))))
+                                &
+                                ((((Q V P) V ((- Q) V (- P))) &
+                                  (((- P) V P) V ((- Q) V (- P))))
+                                 &
+                                 (((Q V (- Q)) V ((- Q) V (- P))) &
+                                  (((- P) V (- Q)) V ((- Q) V (- P)))))))))
+              The result is: (((- P) Q (- Q) P) ((- Q) P) (Q P (- Q) P)
+                              ((- P) P (- Q) P) (Q (- Q) (- Q) P)
+                              ((- P) (- Q) (- Q) P) ((- P) Q)
+                              ((- Q) P (- P) Q) (Q P (- P) Q)
+                              ((- P) P (- P) Q) (Q (- Q) (- P) Q)
+                              ((- P) (- Q) (- P) Q) ((- P) Q P Q)
+                              ((- Q) P P Q) (Q P P Q) ((- P) P P Q)
+                              (Q (- Q) P Q) ((- P) (- Q) P Q)
+                              ((- P) Q (- Q) Q) ((- Q) P (- Q) Q)
+                              (Q P (- Q) Q) ((- P) P (- Q) Q)
+                              (Q (- Q) (- Q) Q) ((- P) (- Q) (- Q) Q)
+                              ((- P) Q P (- P)) ((- Q) P P (- P))
+                              (Q P P (- P)) ((- P) P P (- P))
+                              (Q (- Q) P (- P)) ((- P) (- Q) P (- P))
+                              ((- P) Q (- Q) (- P)) ((- Q) P (- Q) (- P))
+                              (Q P (- Q) (- P)) ((- P) P (- Q) (- P))
+                              (Q (- Q) (- Q) (- P))
+                              ((- P) (- Q) (- Q) (- P)))
+
+The unchecked part of the data base is:
+((- Q) P),  ((- P) Q),  (P Q),  and ((- Q) (- P))
+
+Checking the resolution of ((- Q) P) and ((- P) Q)
+They resolve
+The result is NIL
+The proposition is a tautology
