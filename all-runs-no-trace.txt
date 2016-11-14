@@ -1,3 +1,7 @@
+;; Gerard McDevitt
+;; CSC 481 - Artificial Intelligence Project 3
+;; All 30 test propositions without trace
+
 F1 = P
 The proposition is not a tautology
 
