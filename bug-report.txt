@@ -1,0 +1,6 @@
+;; Gerard McDevitt
+;; CSC 481 - Artificial Intelligence Project 3
+;; Bug report
+
+
+-- I did not find any differences or 'bugs' when using the code.
